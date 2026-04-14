@@ -55,10 +55,10 @@
       <h2 id="titulo-animais">Animais para adoção</h2>
       <p class="subtitulo">Use os filtros para encontrar seu novo companheiro ideal 💚</p>
 
-      <!-- Filtros de busca -->
+      <!--   ================================================ Filtros de busca   ================================================ -->
       <div class="area-filtros" role="group" aria-label="Filtros de busca">
 
-        <!-- Filtro por espécie -->
+        <!-- ================================================ Filtro por espécie ================================================ -->
         <div class="grupo-filtro" id="grupo-especie" aria-label="Filtrar por espécie">
           <span>Espécie:</span>
           <button class="btn-filtro ativo" data-valor="todos" onclick="filtrarPorEspecie('todos')">Todos</button>
@@ -67,7 +67,7 @@
           <button class="btn-filtro"       data-valor="outro" onclick="filtrarPorEspecie('outro')">🐰 Outros</button>
         </div>
 
-        <!-- Filtro por porte -->
+        <!-- ================================================ Filtro por porte ================================================ -->
         <div class="grupo-filtro" id="grupo-porte" aria-label="Filtrar por porte">
           <span>Porte:</span>
           <button class="btn-filtro ativo"  data-valor="todos"   onclick="filtrarPorPorte('todos')">Todos</button>
@@ -78,16 +78,15 @@
 
       </div>
 
-      <!-- Grade de cards — preenchida pelo JavaScript -->
+      <!-- ================================================ Grade de cards — preenchida pelo JavaScript ================================================ -->
       <div class="grid-pets" id="grid-pets" aria-live="polite" aria-label="Lista de animais disponíveis">
       </div>
 
     </section>
 
 
-    <!-- ================================================
-      COMO FUNCIONA A ADOÇÃO
-    ================================================ -->
+    <!-- ================================================  COMO FUNCIONA A ADOÇÃO ================================================ -->
+
     <section id="como-funciona" aria-labelledby="titulo-como">
       <h2 id="titulo-como">Como funciona a adoção?</h2>
       <p class="subtitulo">É simples, rápido e cheio de amor 💛</p>
@@ -124,9 +123,8 @@
   </main>
 
 
-  <!-- ================================================
-    MODAL — formulário de interesse na adoção
-  ================================================ -->
+  <!-- ================================================ MODAL — formulário de interesse na adoção ================================================ -->
+
   <div
     id="fundo-modal"
     class="fundo-modal"
@@ -136,14 +134,14 @@
   >
     <div class="modal">
 
-      <!-- Botão de fechar -->
+      <!--   ================================================ Botão de fechar  ================================================ -->
       <button class="btn-fechar-modal" onclick="fecharModal()" aria-label="Fechar modal">×</button>
 
-      <!-- Título dinâmico (preenchido pelo JS) -->
+      <!--   ================================================ Título dinâmico (preenchido pelo JS)   ================================================ -->
       <h2 id="titulo-modal">Interesse na Adoção</h2>
       <p class="subtitulo-modal">Preencha seus dados e entraremos em contato em breve 🐾</p>
 
-      <!-- Formulário -->
+      <!--   ================================================  Formulário   ================================================ -->
       <form id="form-adocao">
 
         <label for="campo-pet">Animal de interesse</label>
@@ -165,7 +163,7 @@
 
       </form>
 
-      <!-- Mensagem de sucesso (aparece após envio) -->
+      <!--   ================================================ Mensagem de sucesso (aparece após envio)  ================================================ -->
       <div id="mensagem-sucesso" class="mensagem-sucesso" aria-live="assertive">
         <div class="icone-ok">✅</div>
         <h3>Interesse registrado!</h3>
@@ -176,16 +174,13 @@
   </div>
 
 
-  <!-- ================================================
-    RODAPÉ
-  ================================================ -->
+  <!-- ================================================  RODAPÉ   ================================================ -->
+
   <footer>
     <p>Feito com ❤️ pela <strong>ONG Patinhas Felizes</strong> — Todos os animais merecem um lar.</p>
     <p style="margin-top: 6px; opacity: 0.7;">© 2026 Patinhas Felizes. Todos os direitos reservados.</p>
   </footer>
 
-
-  <!-- Script carregado no final para o HTML já existir -->
   <script src="script.js"></script>
 
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adote um Pet 🐾 | ONG Patinhas Felizes</title>
+  <meta name="description" content="Adote um pet e mude uma vida! Cães, gatos e outros animais esperando por um lar cheio de amor." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <!-- ================================================
+    NAVEGAÇÃO
+  ================================================ -->
+  <nav>
+    <div class="logo">🐾 Patinhas<em>Felizes</em></div>
+    <a href="#animais">Ver animais</a>
+  </nav>
+
+
+  <!-- ================================================
+    HERO — apresentação da ONG
+  ================================================ -->
+  <header>
+    <section class="hero" aria-labelledby="titulo-hero">
+
+      <div class="hero-texto">
+        <h1 id="titulo-hero">
+          Adote um pet e<br />
+          <span>mude uma vida</span> 🐾
+        </h1>
+        <p>
+          Centenas de animais esperam por um lar amoroso.
+          Conheça nossos peludos e dê a eles uma segunda chance!
+        </p>
+        <a href="#animais" class="btn-principal">Ver animais disponíveis</a>
+      </div>
+
+      <div class="hero-imagem">
+        <img
+          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop"
+          alt="Dois cachorros felizes correndo juntos em gramado verde sob luz do sol"
+          width="420"
+          height="300"
+          loading="eager"
+        />
+      </div>
+
+    </section>
+  </header>
+
+
+  <!-- ================================================
+    ANIMAIS PARA ADOÇÃO
+  ================================================ -->
+  <main>
+
+    <section id="animais" aria-labelledby="titulo-animais">
+      <h2 id="titulo-animais">Animais para adoção</h2>
+      <p class="subtitulo">Use os filtros para encontrar seu novo companheiro ideal 💚</p>
+
+      <!-- Filtros de busca -->
+      <div class="area-filtros" role="group" aria-label="Filtros de busca">
+
+        <!-- Filtro por espécie -->
+        <div class="grupo-filtro" id="grupo-especie" aria-label="Filtrar por espécie">
+          <span>Espécie:</span>
+          <button class="btn-filtro ativo" data-valor="todos" onclick="filtrarPorEspecie('todos')">Todos</button>
+          <button class="btn-filtro"       data-valor="cao"   onclick="filtrarPorEspecie('cao')">🐶 Cão</button>
+          <button class="btn-filtro"       data-valor="gato"  onclick="filtrarPorEspecie('gato')">🐱 Gato</button>
+          <button class="btn-filtro"       data-valor="outro" onclick="filtrarPorEspecie('outro')">🐰 Outros</button>
+        </div>
+
+        <!-- Filtro por porte -->
+        <div class="grupo-filtro" id="grupo-porte" aria-label="Filtrar por porte">
+          <span>Porte:</span>
+          <button class="btn-filtro ativo"  data-valor="todos"   onclick="filtrarPorPorte('todos')">Todos</button>
+          <button class="btn-filtro"        data-valor="pequeno" onclick="filtrarPorPorte('pequeno')">Pequeno</button>
+          <button class="btn-filtro"        data-valor="medio"   onclick="filtrarPorPorte('medio')">Médio</button>
+          <button class="btn-filtro"        data-valor="grande"  onclick="filtrarPorPorte('grande')">Grande</button>
+        </div>
+
+      </div>
+
+      <!-- Grade de cards — preenchida pelo JavaScript -->
+      <div class="grid-pets" id="grid-pets" aria-live="polite" aria-label="Lista de animais disponíveis">
+      </div>
+
+    </section>
+
+
+    <!-- ================================================
+      COMO FUNCIONA A ADOÇÃO
+    ================================================ -->
+    <section id="como-funciona" aria-labelledby="titulo-como">
+      <h2 id="titulo-como">Como funciona a adoção?</h2>
+      <p class="subtitulo">É simples, rápido e cheio de amor 💛</p>
+
+      <div class="passos">
+
+        <div class="passo">
+          <div class="passo-icone" aria-hidden="true">🔍</div>
+          <h3>1. Escolha</h3>
+          <p>Navegue pelos animais e use os filtros para encontrar o pet ideal.</p>
+        </div>
+
+        <div class="passo">
+          <div class="passo-icone" aria-hidden="true">📝</div>
+          <h3>2. Demonstre interesse</h3>
+          <p>Clique em "Quero Adotar" e preencha o formulário com seus dados.</p>
+        </div>
+
+        <div class="passo">
+          <div class="passo-icone" aria-hidden="true">📞</div>
+          <h3>3. Contato</h3>
+          <p>Nossa equipe entrará em contato para agendar uma visita.</p>
+        </div>
+
+        <div class="passo">
+          <div class="passo-icone" aria-hidden="true">🏠</div>
+          <h3>4. Novo lar!</h3>
+          <p>Após aprovação, o pet vai para o seu lar com toda a documentação.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================================
+    MODAL — formulário de interesse na adoção
+  ================================================ -->
+  <div
+    id="fundo-modal"
+    class="fundo-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="titulo-modal"
+  >
+    <div class="modal">
+
+      <!-- Botão de fechar -->
+      <button class="btn-fechar-modal" onclick="fecharModal()" aria-label="Fechar modal">×</button>
+
+      <!-- Título dinâmico (preenchido pelo JS) -->
+      <h2 id="titulo-modal">Interesse na Adoção</h2>
+      <p class="subtitulo-modal">Preencha seus dados e entraremos em contato em breve 🐾</p>
+
+      <!-- Formulário -->
+      <form id="form-adocao">
+
+        <label for="campo-pet">Animal de interesse</label>
+        <input type="text" id="campo-pet" name="pet" readonly aria-readonly="true" />
+
+        <label for="campo-nome">Seu nome completo <span class="req" aria-label="obrigatório">*</span></label>
+        <input type="text" id="campo-nome" name="nome" placeholder="Ex: Maria Silva" required />
+
+        <label for="campo-email">Seu e-mail *</label>
+        <input type="email" id="campo-email" name="email" placeholder="email@exemplo.com" required />
+
+        <label for="campo-telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="campo-telefone" name="telefone" placeholder="(16) 99000-0000" required />
+
+        <label for="campo-mensagem">Por que você quer adotar?</label>
+        <textarea id="campo-mensagem" name="mensagem" placeholder="Conte um pouco sobre você e seu lar..." required></textarea>
+
+        <button type="submit" class="btn-enviar">Enviar interesse 💚</button>
+
+      </form>
+
+      <!-- Mensagem de sucesso (aparece após envio) -->
+      <div id="mensagem-sucesso" class="mensagem-sucesso" aria-live="assertive">
+        <div class="icone-ok">✅</div>
+        <h3>Interesse registrado!</h3>
+        <p>Recebemos seus dados e entraremos em contato em breve. Obrigado por adotar! 🐾</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+    RODAPÉ
+  ================================================ -->
+  <footer>
+    <p>Feito com ❤️ pela <strong>ONG Patinhas Felizes</strong> — Todos os animais merecem um lar.</p>
+    <p style="margin-top: 6px; opacity: 0.7;">© 2026 Patinhas Felizes. Todos os direitos reservados.</p>
+  </footer>
+
+
+  <!-- Script carregado no final para o HTML já existir -->
+  <script src="script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+/* ===================================================
+   IMPORTAÇÃO DE FONTES
+=================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Lato:wght@400;700&display=swap');
+
+/* ===================================================
+   VARIÁVEIS DE COR E ESTILO
+   Paleta quente e aconchegante — verde musgo + terracota
+=================================================== */
+:root {
+  --verde:        #5a7a5a;   /* verde musgo principal */
+  --verde-claro:  #7fa37f;   /* verde para hover */
+  --verde-bg:     #eef4ee;   /* fundo suave verde */
+  --terracota:    #c0654a;   /* acento quente */
+  --terracota-bg: #fdf0ec;   /* fundo suave terracota */
+  --creme:        #faf7f2;   /* fundo geral da página */
+  --branco:       #ffffff;
+  --texto:        #2d2d2d;   /* texto principal */
+  --texto-suave:  #6b6b6b;   /* texto secundário */
+  --borda:        #e0dbd3;   /* bordas sutis */
+  --sombra:       0 4px 18px rgba(0, 0, 0, 0.08);
+  --radius-card:  14px;
+  --radius-btn:   50px;
+}
+
+/* ===================================================
+   RESET BÁSICO
+=================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--creme);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ===================================================
+   NAVEGAÇÃO
+=================================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--branco);
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--verde);
+}
+
+.logo em {
+  font-style: normal;
+  color: var(--terracota);
+}
+
+nav a {
+  font-weight: 700;
+  color: var(--verde);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--terracota);
+}
+
+/* ===================================================
+   HERO — seção inicial
+=================================================== */
+.hero {
+  background-color: var(--verde-bg);
+  padding: 70px 40px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-texto h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--verde);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-texto h1 span {
+  color: var(--terracota);
+}
+
+.hero-texto p {
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+  max-width: 440px;
+  margin-bottom: 28px;
+}
+
+.hero-imagem {
+  flex: 1;
+  min-width: 260px;
+  text-align: right;
+}
+
+.hero-imagem img {
+  width: 100%;
+  max-width: 420px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+}
+
+/* ===================================================
+   BOTÃO PRINCIPAL
+=================================================== */
+.btn-principal {
+  display: inline-block;
+  background-color: var(--terracota);
+  color: var(--branco);
+  padding: 13px 30px;
+  border-radius: var(--radius-btn);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-principal:hover {
+  background-color: #a5523a;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   SEÇÃO DE ANIMAIS
+=================================================== */
+#animais {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+#animais h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--verde);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+#animais .subtitulo {
+  text-align: center;
+  color: var(--texto-suave);
+  margin-bottom: 32px;
+}
+
+/* ===================================================
+   FILTROS
+=================================================== */
+.area-filtros {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.grupo-filtro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grupo-filtro span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+/* Botão de filtro */
+.btn-filtro {
+  background-color: var(--branco);
+  border: 2px solid var(--borda);
+  color: var(--texto-suave);
+  padding: 7px 16px;
+  border-radius: var(--radius-btn);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filtro:hover {
+  border-color: var(--verde-claro);
+  color: var(--verde);
+}
+
+.btn-filtro.ativo {
+  background-color: var(--verde);
+  border-color: var(--verde);
+  color: var(--branco);
+}
+
+/* ===================================================
+   GRID DE CARDS
+=================================================== */
+/* Atualize apenas esta parte no seu style.css */
+.grid-pets {
+  display: grid;
+  /* Garante 3 colunas iguais se houver espaço (min 300px cada) */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 26px;
+}
+
+/* Ajuste para telas médias (2 colunas) */
+@media (max-width: 992px) {
+  .grid-pets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajuste para telas pequenas (1 coluna) */
+@media (max-width: 680px) {
+  .grid-pets {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===================================================
+   CARD DE PET
+=================================================== */
+.card-pet {
+  background-color: var(--branco);
+  border-radius: var(--radius-card);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  border: 1px solid var(--borda);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-pet:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-pet img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-corpo {
+  padding: 20px;
+}
+
+.card-corpo h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+/* Tags (badges) */
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background-color: var(--terracota-bg);
+  color: var(--terracota);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.tag.verde {
+  background-color: var(--verde-bg);
+  color: var(--verde);
+}
+
+.card-corpo p {
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Botão dentro do card */
+.btn-adotar {
+  width: 100%;
+  background-color: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 11px 0;
+  border-radius: var(--radius-btn);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-adotar:hover {
+  background-color: var(--verde-claro);
+  transform: translateY(-1px);
+}
+
+/* Mensagem quando não há resultados */
+.sem-resultado {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--texto-suave);
+  padding: 50px 20px;
+  font-size: 1rem;
+}
+
+/* ===================================================
+   SEÇÃO COMO FUNCIONA
+=================================================== */
+#como-funciona {
+  background-color: var(--branco);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  padding: 70px 40px;
+  text-align: center;
+}
+
+#como-funciona h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--verde);
+  margin-bottom: 6px;
+}
+
+#como-funciona .subtitulo {
+  color: var(--texto-suave);
+  margin-bottom: 48px;
+}
+
+.passos {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.passo {
+  flex: 1;
+  min-width: 180px;
+  max-width: 210px;
+}
+
+.passo-icone {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.passo h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.passo p {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+/* ===================================================
+   MODAL — formulário de adoção
+=================================================== */
+.fundo-modal {
+  display: none;                      /* escondido por padrão */
+  position: fixed;
+  inset: 0;                           /* cobre a tela toda */
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fundo-modal.aberto {
+  display: flex;                      /* mostra quando classe .aberto é adicionada */
+}
+
+.modal {
+  background-color: var(--branco);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  animation: subirModal 0.25s ease;
+}
+
+@keyframes subirModal {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.btn-fechar-modal {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--texto-suave);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.btn-fechar-modal:hover {
+  color: var(--terracota);
+}
+
+.modal h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--verde);
+  margin-bottom: 4px;
+}
+
+.modal .subtitulo-modal {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin-bottom: 24px;
+}
+
+/* Campos do formulário */
+.modal label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 5px;
+}
+
+.modal input,
+.modal textarea {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid var(--borda);
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  color: var(--texto);
+  background-color: var(--creme);
+  margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border-color: var(--verde);
+}
+
+.modal input[readonly] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.modal textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botão de envio do modal */
+.btn-enviar {
+  width: 100%;
+  background-color: var(--terracota);
+  color: var(--branco);
+  border: none;
+  padding: 13px 0;
+  border-radius: var(--radius-btn);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  margin-top: 4px;
+}
+
+.btn-enviar:hover {
+  background-color: #a5523a;
+  transform: translateY(-1px);
+}
+
+/* Mensagem de sucesso dentro do modal */
+.mensagem-sucesso {
+  display: none;   /* aparece após envio */
+  text-align: center;
+  padding: 10px 0;
+}
+
+.mensagem-sucesso .icone-ok {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.mensagem-sucesso h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.3rem;
+  color: var(--verde);
+  margin-bottom: 8px;
+}
+
+.mensagem-sucesso p {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+/* ===================================================
+   RODAPÉ
+=================================================== */
+footer {
+  background-color: var(--verde);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.88rem;
+}
+
+footer strong {
+  color: var(--branco);
+}
+
+/* ===================================================
+   RESPONSIVO — telas menores que 680px
+=================================================== */
+@media (max-width: 680px) {
+  nav {
+    padding: 16px 20px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-texto p {
+    max-width: 100%;
+  }
+
+  .hero-imagem {
+    text-align: center;
+  }
+
+  #animais,
+  #como-funciona {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-texto h1 {
+    font-size: 2rem;
+  }
+
+  .modal {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,11 @@
+[
+  { "id": 1, "nome": "Bolinha", "especie": "cao", "porte": "pequeno", "idade": "2 anos", "descricao": "Alegre e compacto.", "foto": "./assets/img/dog2.jpeg", "alt": "Cachorro pequeno" },
+  { "id": 2, "nome": "Pipoca", "especie": "cao", "porte": "medio", "idade": "3 anos", "descricao": "Muito dócil e ativo.", "foto": "./assets/img/dog5.jpeg", "alt": "Cachorro médio" },
+  { "id": 3, "nome": "Thor", "especie": "cao", "porte": "grande", "idade": "4 anos", "descricao": "Um gigante gentil.", "foto": "./assets/img/dog1.jpeg", "alt": "Cachorro grande" },
+  { "id": 4, "nome": "Mel", "especie": "gato", "porte": "pequeno", "idade": "1 ano", "descricao": "Gatinha delicada.", "foto": "./assets/img/cat1.jpeg", "alt": "Gato pequeno" },
+  { "id": 5, "nome": "Frajola", "especie": "gato", "porte": "medio", "idade": "2 anos", "descricao": "Brincalhão e esperto.", "foto": "./assets/img/cat5.jpeg", "alt": "Gato médio" },
+  { "id": 6, "nome": "Simba", "especie": "gato", "porte": "grande", "idade": "5 anos", "descricao": "Calmo e imponente.", "foto": "./assets/img/cat4.jpeg", "alt": "Gato grande" },
+  { "id": 7, "nome": "Cantor", "especie": "outro", "porte": "pequeno", "idade": "1 ano", "descricao": "Pássaro alegre.", "foto": "./assets/img/passarinho.jpeg", "alt": "Passarinho" },
+  { "id": 8, "nome": "Pingo", "especie": "outro", "porte": "pequeno", "idade": "6 meses", "descricao": "Porquinho-da-índia fofo.", "foto": "./assets/img/porquinho.jpeg", "alt": "Porquinho" },
+  { "id": 9, "nome": "Pernalonga", "especie": "outro", "porte": "pequeno", "idade": "1 ano", "descricao": "Coelho manso.", "foto": "./assets/img/coelho.jpeg", "alt": "Coelho" }
+]
